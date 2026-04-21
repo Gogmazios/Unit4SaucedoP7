@@ -156,6 +156,8 @@ MonoBehaviour:
   hasPowerup: 0
   powerupStrength: 15
   PI: {fileID: 1742898927154779}
+  currentPowerUp: 0
+  rocketPrefab: {fileID: 0}
 --- !u!54 &141168517
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -794,7 +796,7 @@ MonoBehaviour:
   - {fileID: 1202061861806401380, guid: 7e3f57f0642e1db4c87f555c51849be4, type: 3}
   enemyCount: 0
   waveNumber: 1
-  powerupPrefab: {fileID: 3626219830518425712, guid: 93b829f9cb8b97f459aeb0c02a510b0f, type: 3}
+  powerupPrefabs: []
 --- !u!4 &1809906626
 Transform:
   m_ObjectHideFlags: 0
@@ -815,6 +817,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8664225081570254149, guid: b784afdc16549c94e864a071eb501baf, type: 3}
   m_PrefabInstance: {fileID: 8089996109099536677}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2761669995067516275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.6948535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7818489
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759805437486935121, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771938126142347806, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
+      propertyPath: m_Name
+      value: 'Powerup Missile '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da623b68725097949ae86f4e9cebc0d1, type: 3}
 --- !u!1001 &7305732181041295649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -945,3 +1004,4 @@ SceneRoots:
   - {fileID: 141168521}
   - {fileID: 1809906626}
   - {fileID: 8089996109099536677}
+  - {fileID: 2761669995067516275}

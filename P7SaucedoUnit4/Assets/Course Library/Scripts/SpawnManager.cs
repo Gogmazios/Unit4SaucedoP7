@@ -6,14 +6,14 @@ public class SpawnManager : MonoBehaviour
     private float spawnRange = 9;
     public int enemyCount;
     public int waveNumber = 1;
-    public GameObject powerupPrefab;
+    public GameObject[] powerupPrefabs;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
         SpawnEnemyWave(waveNumber);
-        Instantiate(powerupPrefab, GenerateSpawnPosition(), Quaternion.identity);
+
+        int randomPowerup = Random.Range(0, powerupPrefabs.Length);
+        Instantiate(powerupPrefabs[randomPowerup], GenerateSpawnPosition(), Quaternion.identity);
     }
 
     void SpawnEnemyWave(int enemiesToSpawn)
@@ -21,7 +21,6 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             int RE = Random.Range(0, enemyPrefab.Length);
-            //RE = randomEnemy
             Instantiate(enemyPrefab[RE], GenerateSpawnPosition(), Quaternion.identity);
         }
     }
@@ -30,19 +29,20 @@ public class SpawnManager : MonoBehaviour
     {
         float spawnPosX = Random.Range(-spawnRange, spawnRange);
         float spawnPosZ = Random.Range(-spawnRange, spawnRange);
-        Vector3 randomPos = new Vector3(spawnPosX, 0, spawnPosZ);
-        return randomPos;
-
+        return new Vector3(spawnPosX, 0, spawnPosZ);
     }
-    // Update is called once per frame
+
     void Update()
     {
         enemyCount = FindObjectsByType<Enemy>(FindObjectsSortMode.None).Length;
+
         if (enemyCount == 0)
         {
             waveNumber++;
             SpawnEnemyWave(waveNumber);
-            Instantiate(powerupPrefab, GenerateSpawnPosition(), Quaternion.identity);
+
+            int randomPowerup = Random.Range(0, powerupPrefabs.Length);
+            Instantiate(powerupPrefabs[randomPowerup], GenerateSpawnPosition(), Quaternion.identity);
         }
     }
 }
