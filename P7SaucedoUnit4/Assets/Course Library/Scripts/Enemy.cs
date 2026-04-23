@@ -7,12 +7,27 @@ public class Enemy : MonoBehaviour
     // ERB = enemyRB
     private GameObject player; 
     
+    public bool isBoss = false;
+    public float spawnInterval;
+    private float nextSpawn;
+    public int miniEnemySpawnCount;
+    private SpawnManager SM; 
+   // spawnManager = SM
+
+
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ERB = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
+
+        if (isBoss)
+        {
+            SM = FindObjectOfType<SpawnManager>(); 
+        }
     }
 
     // Update is called once per frame
@@ -25,6 +40,13 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject); 
         }
 
+        if(isBoss)
+        {
+            if(Time.time > nextSpawn)
+            {
+                nextSpawn = Time.time + spawnInterval; 
+            }
+        }
     }
 
 
