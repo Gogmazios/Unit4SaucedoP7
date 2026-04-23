@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public float smashSpeed;
     public float explosionForce;
     public float explosionRadius;
-
     bool smashing = false;
     float floorY;
 
