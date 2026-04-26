@@ -44,7 +44,8 @@ public class Enemy : MonoBehaviour
         {
             if(Time.time > nextSpawn)
             {
-                nextSpawn = Time.time + spawnInterval; 
+                nextSpawn = Time.time + spawnInterval;
+                SM.SpawnMiniEnemy(miniEnemySpawnCount); 
             }
         }
     }
